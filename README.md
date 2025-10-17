@@ -28,17 +28,29 @@ The dataset is preprocessed, cleaned, and normalized for efficient training, and
 
 ---
 
-## 🧰 Model Architecture  
-| Layer | Type | Filters/Units | Activation |  
-|-------|------|---------------|-------------|  
-| 1 | Conv2D | 16 | ReLU |  
-| 2 | MaxPooling2D | - | - |  
-| 3 | Conv2D | 32 | ReLU |  
-| 4 | MaxPooling2D | - | - |  
-| 5 | Conv2D | 16 | ReLU |  
-| 6 | Flatten | - | - |  
-| 7 | Dense | 256 | ReLU |  
-| 8 | Dense | 1 | Sigmoid |  
+## 🧰 Model Architecture & Summary 
+
+
+| Layer (type)                    | Output Shape           | Param #     |
+|---------------------------------|------------------------|--------------|
+| **conv2d_17 (Conv2D)**          | (None, 254, 254, 16)   | 448          |
+| **max_pooling2d_15 (MaxPooling2D)** | (None, 127, 127, 16)   | 0            |
+| **dropout (Dropout)**           | (None, 127, 127, 16)   | 0            |
+| **conv2d_18 (Conv2D)**          | (None, 125, 125, 32)   | 4,640        |
+| **max_pooling2d_16 (MaxPooling2D)** | (None, 62, 62, 32)     | 0            |
+| **dropout_1 (Dropout)**         | (None, 62, 62, 32)     | 0            |
+| **conv2d_19 (Conv2D)**          | (None, 60, 60, 16)     | 4,624        |
+| **max_pooling2d_17 (MaxPooling2D)** | (None, 30, 30, 16)     | 0            |
+| **dropout_2 (Dropout)**         | (None, 30, 30, 16)     | 0            |
+| **flatten_5 (Flatten)**         | (None, 14400)          | 0            |
+| **dense_10 (Dense)**            | (None, 256)            | 3,686,656    |
+| **dropout_3 (Dropout)**         | (None, 256)            | 0            |
+| **dense_11 (Dense)**            | (None, 1)              | 257          |
+
+**Total params:** 3,696,625  
+**Trainable params:** 3,696,625  
+**Non-trainable params:** 0
+  
 
 ---
 
